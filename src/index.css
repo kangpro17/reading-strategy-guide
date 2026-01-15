@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Pretendard:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* 
+    Design Theme: Modern & Stylish
+    Concept: Minimalist, Typography-focused, Sophisticated.
+    Combination of elegant Serif for headings and clean Sans-serif for body.
+  */
+
+  /* Primary: Deep Charcoal / Midnight Navy */
+  --color-primary: #1A1F2C;
+  /* Secondary: Muted Sage / Stone Gray */
+  --color-secondary: #6B7280;
+  /* Accent: Sophisticated Gold / Clay */
+  --color-accent: #C5A47E;
+
+  /* Surface: Clean Warm White */
+  --color-surface: #FFFFFF;
+  --color-surface-light: #F8F9FA;
+  --color-surface-dark: #F3F4F6;
+
+  /* Text Colors */
+  --color-text: #1F2937;
+  --color-text-muted: #4B5563;
+  --color-text-light: #9CA3AF;
+
+  /* Gradients - Subtle and Modern */
+  --gradient-primary: linear-gradient(135deg, #1A1F2C 0%, #374151 100%);
+  --gradient-accent: linear-gradient(135deg, #C5A47E 0%, #D4B48F 100%);
+  --gradient-subtle: linear-gradient(to right, #F8F9FA, #FFFFFF);
+
+  /* Shadows - Soft and diffused */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Typography */
+  --font-serif: 'Gowun Batang', serif;
+  --font-sans: 'Pretendard', -apple-system, sans-serif;
+
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  /* Increased line height for readability */
+  font-weight: 400;
+  font-size: 17px;
+  /* Increased base font size */
+
+  color: var(--color-text);
+  background-color: var(--color-surface);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #FAFAFA;
+  /* Very light subtle grey for less eye strain */
+}
+
+/* Headings - Serif for style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+/* Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.gradient-text {
+  color: var(--color-primary);
+  /* Fallback */
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons - Modern Pili/Capsule style */
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  /* Capsule shape */
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+/* Tags & Chips */
+.tag {
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-muted);
+  border: 1px solid transparent;
+  font-size: 14px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D1D5DB;
+}
